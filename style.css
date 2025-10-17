@@ -159,21 +159,38 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--card-bg);
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 1.2rem;
   border-radius: var(--radius);
-  font-weight: 500;
+  width: 140px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item i {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.skill-item span {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
 }
 
 /* === 6. Projets === */
