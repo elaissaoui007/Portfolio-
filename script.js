@@ -50,3 +50,50 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+// Contact form validation
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent actual submit
+
+    // Get values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Reset message
+    formMessage.textContent = '';
+    formMessage.style.color = '';
+
+    // Validation
+    let isValid = true;
+
+    if (name === '') {
+      isValid = false;
+    }
+    if (email === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      isValid = false;
+    }
+    if (message === '') {
+      isValid = false;
+    }
+
+    if (!isValid) {
+      formMessage.textContent = 'Veuillez remplir tous les champs correctement.';
+      formMessage.style.color = '#ef4444'; // Red
+      return;
+    }
+
+    // If valid: show success message
+    formMessage.textContent = 'Merci ! Votre message a été envoyé.';
+    formMessage.style.color = '#10b981'; // Green
+
+    // Optional: reset form after 2 seconds
+    setTimeout(() => {
+      contactForm.reset();
+      formMessage.textContent = '';
+    }, 2000);
+  });
+}

@@ -352,3 +352,9 @@ nav a.active::after {
   background-color: var(--primary-color);
   border-radius: 50%;
 }
+#formMessage {
+  margin-top: 1rem;
+  font-weight: 600;
+  min-height: 1.5rem;
+  text-align: center;
+}
