@@ -197,7 +197,8 @@ nav a:hover {
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .project-card {
@@ -205,33 +206,48 @@ nav a:hover {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  display: block;
 }
 
-.project-card h3 {
-  padding: 1rem;
-  font-size: 1.3rem;
+.project-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card p {
-  padding: 0 1rem 1rem;
-  color: #555;
+.project-content h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-color);
 }
 
-.project-card .btn {
-  margin: 0 1rem 1rem;
+.project-content p {
+  color: #888;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  line-height: 1.5;
 }
 
+.project-content .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}   
 /* === 7. Contact Form === */
 #contactForm {
   max-width: 600px;
