@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   /* Light mode colors */
@@ -298,4 +301,21 @@ footer {
     width: 120px;
     height: 120px;
   }
+}
+nav a.active {
+  color: var(--primary-color);
+  font-weight: 700;
+  position: relative;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
 }
