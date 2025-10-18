@@ -138,8 +138,8 @@ nav a:hover {
 }
 
 .hero img {
-  width: 150px;
-  height: 150px;
+  width: 280px;
+  height: 255px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 2rem;
